@@ -3,114 +3,180 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Safiullah Arain - Portfolio</title>
+  <title>Safiullah Arain | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+  
   <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            primary: '#FF0000',
-            secondary: '#0044FF',
-            accent: '#FF77CC',
-            background: '#0F0F0F',
-            card: '#1C1C1C',
-            whiteText: '#FFFFFF',
-            buttonColor: '#FFFFFF',
-            buttonBg: '#0044FF'
-          },
-          boxShadow: {
-            neon: '0 0 10px #00FFAA, 0 0 20px #1E90FF'
-          },
-          transitionProperty: {
-            'glow': 'box-shadow, color'
+            brand: {
+              glow: '#00F0FF',
+              deep: '#7000FF',
+              accent: '#FF007A',
+              dark: '#050505'
+            }
           }
         }
       }
     }
   </script>
+
   <style>
-    body { background: linear-gradient(135deg, #000814, #001D3D, #8B0000); color: #FFFFFF; }
-    .fade-in { animation: fadeIn 1.2s ease-in-out; }
-    .slide-up { animation: slideUp 1s ease-in-out; }
-    .hover-scale:hover { transform: scale(1.08) rotateX(6deg) rotateY(6deg); transition: 0.4s; box-shadow: 0 0 25px #0044FF, 0 0 45px #FF0000; }
-    .highlight-secondary { color: #1E90FF; }
-    .highlight-accent { color: #FF6EC7; }
-    .highlight-white { color: #FFFFFF; }
-    .bg-card { background-color: #2A2A2A; }
-    .project-link { display:inline-block; padding:0.5rem 1rem; background-color:#0044FF; color:#FFFFFF; border-radius:0.375rem; text-decoration:none; transition:all 0.3s ease; box-shadow:0 0 15px #0044FF; }
-    .project-link:hover { box-shadow:0 0 35px #FF0000, 0 0 55px #0044FF; transform: scale(1.1); }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #050505;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(112, 0, 255, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(0, 240, 255, 0.1) 0px, transparent 50%);
+      color: #e2e8f0;
+      scroll-behavior: smooth;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s ease;
+    }
+    .glass:hover {
+      border-color: rgba(0, 240, 255, 0.3);
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .text-gradient {
+      background: linear-gradient(to right, #00F0FF, #7000FF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .profile-ring {
+      padding: 5px;
+      background: linear-gradient(45deg, #00F0FF, #7000FF, #FF007A);
+      border-radius: 50%;
+      box-shadow: 0 0 40px rgba(112, 0, 255, 0.4);
+    }
+    .skill-tag {
+      padding: 6px 14px;
+      background: rgba(112, 0, 255, 0.1);
+      border: 1px solid rgba(112, 0, 255, 0.2);
+      border-radius: 99px;
+      font-size: 0.875rem;
+    }
   </style>
 </head>
 
-<body class="text-white transition-colors duration-500">
+<body class="antialiased">
 
-  <header style="background: linear-gradient(135deg,#001D3D,#8B0000); box-shadow: 0 0 25px #8B0000;" class="fade-in p-6"> class="bg-card shadow-neon fade-in p-6">
-    <div class="max-w-5xl mx-auto text-center">
-      <h1 class="text-4xl font-bold text-primary">Safi Arain</h1>
-      <p class="text-xl highlight-white"> Software Enginner Student — Iqra University</p>
+  <nav class="sticky top-0 z-50 glass border-b border-white/5 px-6 py-4">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <span class="text-xl font-extrabold tracking-tighter text-white">SA<span class="text-brand-glow">.</span></span>
+      <div class="space-x-8 text-sm font-medium uppercase tracking-widest text-gray-400">
+        <a href="#about" class="hover:text-brand-glow transition-colors">About</a>
+        <a href="#projects" class="hover:text-brand-glow transition-colors">Projects</a>
+        <a href="#contact" class="hover:text-brand-glow transition-colors">Contact</a>
+      </div>
     </div>
+  </nav>
+
+  <header class="pt-24 pb-12 px-6 text-center">
+    <h1 class="text-6xl md:text-8xl font-extrabold text-white mb-6 tracking-tight">
+      Safiullah <span class="text-gradient">Arain</span>
+    </h1>
+    <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+      Software Engineering Student at <span class="text-white font-semibold">Iqra University</span>.
+      <br><span class="text-sm md:text-lg opacity-80 italic">Architecting clean code and robust network solutions.</span>
+    </p>
   </header>
 
-  <section id="about" class="max-w-5xl mx-auto px-6 py-10 fade-in">
-    <h2 class="text-3xl font-semibold mb-4 text-primary">Professional Summary</h2>
-    <p class="text-lg leading-relaxed">
-      Passionate and dedicated Software Engineer student with strong interest in networking, programming, and
-      technology solutions. Skilled in Java, networking fundamentals, and problem‑solving. Always learning,
-      improving, and building real‑world projects.
-    </p>
-  </section>
+  <section id="about" class="max-w-6xl mx-auto px-6 py-16">
+    <div class="glass rounded-[2.5rem] p-8 md:p-12 flex flex-col md:flex-row items-center gap-12">
+      
+      <div class="flex-shrink-0">
+        <div class="profile-ring">
+          <div class="bg-brand-dark rounded-full overflow-hidden w-56 h-56 md:w-72 md:h-72 border-4 border-brand-dark">
+            <img src="WhatsApp Image 2026-01-10 at 9.45.42 PM.jpeg" 
+                 alt="Safiullah Arain Profile" 
+                 class="w-full h-full object-cover transition-all duration-700 scale-110">
+          </div>
+        </div>
+      </div>
 
-  <section class="max-w-5xl mx-auto px-6 py-10 fade-in">
-    <h2 class="text-3xl font-semibold mb-4 text-primary">Skills</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
-      <ul class="list-disc ml-6">
-        <li>Java, C</li>
-        <li>Networking (Static Routing, Subnetting)</li>
-        <li>Problem Solving</li>
-      </ul>
-      <ul class="list-disc ml-6">
-        <li>Debugging & Logical Thinking</li>
-        <li>Teamwork & Communication</li>
-        <li>Project Documentation</li>
-      </ul>
+      <div class="flex-grow">
+        <h2 class="text-3xl font-bold text-white mb-6">About Me</h2>
+        <p class="text-gray-400 text-lg leading-relaxed mb-6">
+          I am a driven Software Engineering student with a deep passion for <strong>Networking</strong> and <strong>Modern Programming</strong>. My academic journey at Iqra University has equipped me with a strong foundation in building interactive Java applications and designing robust network architectures.
+        </p>
+        <p class="text-gray-400 text-lg leading-relaxed mb-8">
+          Whether it’s mastering <strong>Static Routing</strong> or developing <strong>JavaFX GUIs</strong>, I focus on writing clean, readable code and finding efficient solutions to complex problems.
+        </p>
+        
+        <h3 class="text-brand-glow font-bold uppercase tracking-widest text-sm mb-4">Core Arsenal</h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="skill-tag">Java SE/EE</span>
+          <span class="skill-tag">C Programming</span>
+          <span class="skill-tag">Static Routing</span>
+          <span class="skill-tag">JavaFX UI</span>
+          <span class="skill-tag">Subnetting</span>
+          <span class="skill-tag">Logic Debugging</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="max-w-5xl mx-auto px-6 py-10 fade-in">
-    <h2 class="text-3xl font-semibold mb-6 text-primary">Major Projects</h2>
+  <section id="projects" class="max-w-6xl mx-auto px-6 py-20">
+    <h2 class="text-4xl font-bold mb-12 text-white text-center md:text-left">Featured <span class="text-brand-deep">Work</span></h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <div class="glass p-8 rounded-3xl flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 bg-brand-deep/20 rounded-xl mb-6 flex items-center justify-center text-brand-glow text-2xl font-bold">01</div>
+          <h3 class="text-2xl font-bold text-white mb-4">Quiz Adventure</h3>
+          <p class="text-gray-400 mb-6">Interactive gaming experience built with optimized logic and engaging animations.</p>
+        </div>
+        <span class="text-brand-glow text-sm font-mono tracking-widest uppercase text-xs">Java Development</span>
+      </div>
 
-    <div class="bg-card shadow-neon rounded-lg p-6 slide-up hover-scale mb-6">
-      <h3 class="text-2xl font-bold text-primary">Quiz Adventure Game</h3>
-      <p class="mt-2">A fun and interactive quiz game with scoring and animations.</p>
-    </div>
+      <div class="glass p-8 rounded-3xl flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 bg-brand-accent/20 rounded-xl mb-6 flex items-center justify-center text-brand-accent text-2xl font-bold">02</div>
+          <h3 class="text-2xl font-bold text-white mb-4">JavaFX ATM System</h3>
+          <p class="text-gray-400 mb-6">Full-scale banking simulation featuring PIN verification and balance management.</p>
+        </div>
+        <span class="text-brand-glow text-sm font-mono tracking-widest uppercase text-xs">GUI Design</span>
+      </div>
 
-    <div class="bg-card shadow-neon rounded-lg p-6 slide-up hover-scale mb-6">
-      <h3 class="text-2xl font-bold text-primary">JavaFX ATM Machine & CV Maker</h3>
-      <p class="mt-2">A JavaFX‑based ATM system with PIN, balance check & a simple CV Maker tool.</p>
-    </div>
+      <div class="glass p-8 rounded-3xl flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 bg-white/10 rounded-xl mb-6 flex items-center justify-center text-white text-2xl font-bold">03</div>
+          <h3 class="text-2xl font-bold text-white mb-4">CV Builder Pro</h3>
+          <p class="text-gray-400 mb-6">Web-based tool designed to help professionals generate exportable resumes instantly.</p>
+        </div>
+        <span class="text-brand-glow text-sm font-mono tracking-widest uppercase text-xs">Web Development</span>
+      </div>
 
-    <div class="bg-card shadow-neon rounded-lg p-6 slide-up hover-scale mb-6">
-      <h3 class="text-2xl font-bold text-primary">Online CV / Resume Maker</h3>
-      <p class="mt-2">A web‑based CV/Resume builder with templates and export options.</p>
     </div>
   </section>
 
-  <section id="contact" class="bg-card shadow-neon rounded-lg fade-in px-6 py-10">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-semibold mb-4 text-primary">Contact</h2>
-      <p><strong>Email:</strong> safiarain273@gmail.com</p>
-      <p><strong>Phone:</strong> +92‑3333139121</p>
-      <p><strong>Location:</strong> Karachi, Pakistan</p>
-      <p><strong>LinkedIn / Portfolio:</strong> https://www.linkedin.com/in/safiullah-arain-a8604a399</p>
+  <section id="contact" class="max-w-4xl mx-auto px-6 py-20 pb-32">
+    <div class="glass p-12 rounded-[3rem] text-center border-brand-glow/20 relative overflow-hidden">
+      <h2 class="text-4xl font-bold mb-4 text-white">Let’s Connect</h2>
+      <p class="text-gray-400 mb-8">Feel free to reach out for collaborations or project inquiries.</p>
+      
+      <div class="flex flex-col md:flex-row justify-center gap-6 text-lg mb-10">
+        <a href="mailto:safiarain273@gmail.com" class="text-white hover:text-brand-glow transition-colors font-semibold">safiarain273@gmail.com</a>
+        <span class="hidden md:block text-gray-700">|</span>
+        <a href="tel:+923333139121" class="text-white hover:text-brand-glow transition-colors">+92 333 3139121</a>
+      </div>
+      
+      <a href="https://www.linkedin.com/in/safiullah-arain-a8604a399" target="_blank" class="inline-block px-12 py-4 bg-white text-black font-extrabold rounded-full hover:bg-brand-glow hover:text-white transition-all transform hover:scale-110">
+        LINKEDIN PROFILE
+      </a>
     </div>
   </section>
 
-  <footer class="text-center py-6 text-secondary fade-in">
-    © 2025 Safi Arain — Portfolio
+  <footer class="text-center py-12 text-gray-600 text-sm tracking-widest uppercase border-t border-white/5">
+    &copy; 2026 Safi Arain <span class="mx-2">•</span> Karachi, Pakistan
   </footer>
 
 </body>
